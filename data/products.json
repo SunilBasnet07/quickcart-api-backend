@@ -1,0 +1,76 @@
+[
+    {
+        "id": "1",
+        "name": "Apache RTR 160 4V Special Edition",
+        "brand": "TVS",
+        "category": "Bikes",
+        "price": 3999
+    },
+    {
+        "id": "2",
+        "name": "Acer Predator Helios 900",
+        "brand": "Acer",
+        "category": "Laptop",
+        "price": 2599
+    },
+    {
+        "id": "3",
+        "name": "Mt-15",
+        "brand": "Yamaha ",
+        "category": "Bikes",
+        "price": 1999
+    },
+    {
+        "id": "4",
+        "name": "Royal Enfield 500",
+        "brand": "bullet",
+        "price": 5999
+    },
+    {
+        "id": "5",
+        "name": "lather Jacket",
+        "brand": "Rhino Lathers",
+        "category": "Cloathing",
+        "price": 599
+    },
+    {
+        "id": "6",
+        "name": "iphone 16 pro max",
+        "brand": "Apple",
+        "category": "Smartphone",
+        "price": 1999
+    },
+    {
+        "id": "7",
+        "name": "MacBook Pro M2",
+        "brand": "Apple",
+        "category": "Laptop",
+        "price": 1499
+    },
+    {
+        "id": "8",
+        "name": "Apple Watch Series 10",
+        "brand": "Apple",
+        "price": 999
+    },
+    {
+        "id": "9",
+        "name": "Headephone",
+        "brand": "Apple",
+        "price": 499
+    },
+    {
+        "id": "11",
+        "name": "Iphon 12 pro max",
+        "brand": "iphone",
+        "category": "Phone",
+        "price": 4999
+    },
+    {
+        "id": "10",
+        "name": "Iphon 12 pro max",
+        "brand": "iphone",
+        "category": "Phone",
+        "price": 4999
+    }
+]
