@@ -28,7 +28,7 @@ const PORT = process.env.PORT;
 
 app.get("/",(req,res)=>{
   res.json({
-    "name": "nodejs-20250120",
+    "name": "QuickCart Project API",
     "version": "1.0.0",
     "port":PORT,
     "author":"Sunil Basnet"
