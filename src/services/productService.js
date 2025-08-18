@@ -9,24 +9,42 @@ const getAllProducts = async (query) => {
   let limit = 0, sort = {}, filters = {};
 
   try {
+    // ✅ Limit
     limit = query?.limit ? Number(query.limit) : 0;
 
+    // ✅ Sort
     if (query?.sort) {
       sort = typeof query.sort === "string" ? JSON.parse(query.sort) : query.sort;
- 
     }
 
-
+    // ✅ Filters
     if (query?.filters) {
+      const parsedFilters =
+        typeof query.filters === "string" ? JSON.parse(query.filters) : query.filters;
 
+      if (parsedFilters.name) {
+        filters.name = { $regex: parsedFilters.name, $options: "i" };
+      }
+
+      if (parsedFilters.category) {
+        filters.category = parsedFilters.category;
+      }
+
+      if (parsedFilters.minPrice || parsedFilters.maxPrice) {
+        filters.price = {};
+        if (parsedFilters.minPrice) filters.price.$gte = Number(parsedFilters.minPrice);
+        if (parsedFilters.maxPrice) filters.price.$lte = Number(parsedFilters.maxPrice);
+      }
     }
   } catch (err) {
     console.error("Error parsing query params:", err.message);
   }
 
-console.log(sort)
+  console.log("Final filters:", filters);
+
   return await Product.find(filters).limit(limit).sort(sort);
 };
+
 
 
 
