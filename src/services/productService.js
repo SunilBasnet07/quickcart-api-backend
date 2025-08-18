@@ -29,6 +29,9 @@ const getAllProducts = async (query) => {
       if (parsedFilters.category) {
         filters.category = parsedFilters.category;
       }
+      if (parsedFilters.brand) {
+        filters.brand = parsedFilters.brand;
+      }
 
       if (parsedFilters.minPrice || parsedFilters.maxPrice) {
         filters.price = {};
@@ -52,6 +55,9 @@ const getProductById = async (id) => {
   return await Product.findById(id);
 }
 const getCategories = async () => {
+  return await Product.distinct("category");
+}
+const getBrand = async () => {
   return await Product.distinct("brand");
 }
 
@@ -73,4 +79,4 @@ const deleteProduct = async (id) => {
 }
 
 
-export default { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, getCategories }
+export default { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, getCategories ,getBrand}

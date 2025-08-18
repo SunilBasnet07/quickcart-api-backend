@@ -52,10 +52,19 @@ const deleteProduct = async (req, res) => {
 const getCategories = async (req, res) => {
   try {
     const categories = await productService.getCategories();
-    console.log(categories);
+ 
     res.json(categories);
   } catch (error) {
     res.status(500).send(error.message);
   }
 };
-export { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, getCategories }
+const getBrand = async (req, res) => {
+  try {
+    const brands = await productService.getBrand();
+ 
+    res.json(brands);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
+export { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, getCategories,getBrand }
