@@ -57,6 +57,10 @@ const getProductById = async (id) => {
 const getCategories = async () => {
   return await Product.distinct("category");
 }
+const getAllCategories = async (category) => {
+  console.log(category)
+  return await Product.find(category);
+}
 const getBrand = async () => {
   return await Product.distinct("brand");
 }
@@ -79,4 +83,4 @@ const deleteProduct = async (id) => {
 }
 
 
-export default { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, getCategories ,getBrand}
+export default { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, getCategories ,getBrand,getAllCategories}

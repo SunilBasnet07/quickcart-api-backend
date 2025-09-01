@@ -58,6 +58,17 @@ const getCategories = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
+const getAllCategories = async (req,res) => {
+const data = req.body;
+console.log(data); 
+  try {
+    const categories = await productService.getAllCategories(data);
+ 
+    res.json(categories);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+};
 const getBrand = async (req, res) => {
   try {
     const brands = await productService.getBrand();
@@ -67,4 +78,4 @@ const getBrand = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
-export { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, getCategories,getBrand }
+export { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct, getCategories,getBrand,getAllCategories }

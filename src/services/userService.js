@@ -2,8 +2,17 @@ import User from "../models/User.js"
 import uploadfile from "../utils/file.js";
 
 
-const getAllUsers = async () => {
-    return await User.find();
+const getAllUsers = async (query) => {
+   
+    let filters={}
+    if(query.filters){
+        const parsedFilters = typeof query?.filters ==='string' ? JSON.parse(query.filters):query.filters;
+        if (parsedFilters.name) {
+        filters.name = { $regex: parsedFilters.name, $options: "i" };
+      }
+    }
+     console.log(filters)
+    return await User.find(filters);
 }
 const getUserById = async (id) => {
     return await User.findById(id);

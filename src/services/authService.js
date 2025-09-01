@@ -24,7 +24,7 @@ const login = async (data) => {
 
 
 const register = async (data) => {
-    const user = await User.findOne({ email: data.email })
+    const user = await User.create(data)
     if (user) throw new Error("User already exist.");
 
     const hashPassword = bcrypt.hashSync(data.password, 10);
